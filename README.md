@@ -38,7 +38,7 @@ Welcome to the Python Repository! This repository serves as a comprehensive guid
     - While Loop
 17. [Range and Its Parameters](#range-and-its-parameters)
 18. [List](#list)
-19. [Tuples](#Tuples)
+19. [Tuples](#tuples)
 
 ## What is Python
 
