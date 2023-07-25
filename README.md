@@ -614,8 +614,7 @@ print("Min item in tuple:", min(l_tuple3))           # Output: Min item in tuple
 # sum()	Returns the sum of all items in an iterable
 print("Sum of all items in tuple:", sum(l_tuple3))    # Output: Sum of all items in tuple: 21
 
-
+```
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-```
