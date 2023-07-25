@@ -359,6 +359,18 @@ while count <= 5:
     count += 1
 ```
 
+While Loop with Else
+
+```python
+count = 1
+
+while count <= 5:
+    print(count)
+    count += 1
+else:
+    print("Count is greater than 5")
+```
+
 ## Range and Its Parameters
 
 `range()` is a built-in function used to generate sequences of numbers.
@@ -615,6 +627,7 @@ print("Min item in tuple:", min(l_tuple3))           # Output: Min item in tuple
 print("Sum of all items in tuple:", sum(l_tuple3))    # Output: Sum of all items in tuple: 21
 
 ```
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
