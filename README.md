@@ -39,6 +39,7 @@ Welcome to the Python Repository! This repository serves as a comprehensive guid
 17. [Range and Its Parameters](#range-and-its-parameters)
 18. [List](#list)
 19. [Tuples](#tuples)
+20. [Break and Continue](#break-and-continue)
 
 ## What is Python
 
@@ -359,7 +360,7 @@ while count <= 5:
     count += 1
 ```
 
-While Loop with Else
+**While Loop with Else**
 
 ```python
 count = 1
@@ -625,6 +626,73 @@ print("Min item in tuple:", min(l_tuple3))           # Output: Min item in tuple
 
 # sum()	Returns the sum of all items in an iterable
 print("Sum of all items in tuple:", sum(l_tuple3))    # Output: Sum of all items in tuple: 21
+
+```
+
+## Break and Continue
+
+**Break**
+The Break statement enables a program to skip over a part of the code. A Break statement terminates the very loop it lies within.
+**Example:**
+```python
+for i in range(1, 11):
+    print(i, end=" ")
+    if i == 5:
+        break
+    else:
+        print("else block")
+print("outside for loop")
+```
+**Example**
+```python
+num = int(input("Enter a number to print Table: "))
+for i in range(1,20):
+    if i == 11:
+        break
+    else:
+        print(num,"x",i,"=",num*i)
+
+# Output:
+# Enter a number to print Table: 5
+# 5 x 1 = 5
+# 5 x 2 = 10
+# 5 x 3 = 15
+# 5 x 4 = 20
+# 5 x 5 = 25
+# 5 x 6 = 30
+# 5 x 7 = 35
+# 5 x 8 = 40
+# 5 x 9 = 45
+# 5 x 10 = 50 It will come out of the loop after 10
+        
+```
+
+**Continue**
+The continue statement is used to skip the current iteration of the loop and continue with the next iteration.
+
+```python
+num=int(input("Enter a number to print Table: "))
+for i in range(1, 13):
+    if i == 10:
+        continue  # skip the current iteration and continue with the next iteration means it will skip 10 and continue with 11
+    else:
+        print(num,"x",i,"=",num*i)
+
+#Output:
+# Enter a number to print Table: 5
+# 5 x 1 = 5
+# 5 x 2 = 10
+# 5 x 3 = 15
+# 5 x 4 = 20
+# 5 x 5 = 25
+# 5 x 6 = 30
+# 5 x 7 = 35
+# 5 x 8 = 40
+# 5 x 9 = 45
+#Skip 10
+# 5 x 11 = 55
+# 5 x 12 = 60
+# outside for loop
 
 ```
 
