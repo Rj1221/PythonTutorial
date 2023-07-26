@@ -634,6 +634,7 @@ print("Sum of all items in tuple:", sum(l_tuple3))    # Output: Sum of all items
 **Break**
 The Break statement enables a program to skip over a part of the code. A Break statement terminates the very loop it lies within.
 **Example:**
+
 ```python
 for i in range(1, 11):
     print(i, end=" ")
@@ -643,7 +644,9 @@ for i in range(1, 11):
         print("else block")
 print("outside for loop")
 ```
+
 **Example**
+
 ```python
 num = int(input("Enter a number to print Table: "))
 for i in range(1,20):
@@ -664,10 +667,11 @@ for i in range(1,20):
 # 5 x 8 = 40
 # 5 x 9 = 45
 # 5 x 10 = 50 It will come out of the loop after 10
-        
+
 ```
 
-**Continue**
+# Continue
+
 The continue statement is used to skip the current iteration of the loop and continue with the next iteration.
 
 ```python
