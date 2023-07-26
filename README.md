@@ -465,6 +465,12 @@ print("List after append:", l_list)   # Output: List after append: [11, 2, 3, 4,
 # You can also add multiple items at once using the extend() method.
 l_list.extend([12, 13, 14])
 print("List after extend:", l_list)   # Output: List after extend: [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+
+# Insert Items
+# You can insert items at a given index using the insert() method.
+l_list.insert(0, 0)
+print("List After Insert:",l_list) #Output :List after Insert: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+
 ```
 
 ## Remove Items from a List
