@@ -71,17 +71,77 @@ if 10 == 10 or 20 == 20:
 # Not not
 if not 10 == 20:
     print("True")
+
+
 # Identity Operators
+# Example: is, is not
 # Is is
+if 10 is 10:
+    print("True")
 
 # Is Not is not
+if 10 is not 20:
+    print("True")
+
+
 # Membership Operators
+# Example: in, not in
 # In in
+l_list = [1, 2, 3, 4, 5]
+if 1 in l_list:
+    print("True")
+
 # Not In not in
+if 10 not in l_list:
+    print("True")
+
 # Bitwise Operators
+
+# Example: &, |, ^, ~, <<, >>
+
 # And &
+# The code is performing a bitwise AND operation between the variables `a` and `b`.
+# It first converts the numbers into binary, and then performs the AND operation.
+a = 10
+b = 20
+c = a & b  # 0
+print(c)
+
 # Or |
+# Used to perform bitwise or operation on the binary representation of the numbers
+# It first converts the numbers into binary, and then performs the OR operation.
+a = 10
+b = 20
+c = a | b  # 30
+
 # Xor ^
+# Used to perform bitwise XOR operation on the binary representation of the numbers
+# It first converts the numbers into binary, and then performs the XOR operation.
+a = 10
+b = 20
+c = a ^ b  # 30
+
 # Not ~
+a = 10
+b = ~a
+
 # Left Shift <<
+# Used to perform left shift operation on the binary representation of the numbers
+# It first converts the numbers into binary, and then performs the left shift operation.
+a = 10
+b = a << 2  # 40
+
 # Right Shift >>
+a = 10
+b = a >> 2  # 2
+
+# Operator Precedence
+# ()
+# **
+# ~
+# * / % //
+# + -
+# << >>
+# Example
+a = 10 + 20 * 30 / 40
+# 10 + 600 / 40
