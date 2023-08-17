@@ -40,6 +40,7 @@ Welcome to the Python Repository! This repository serves as a comprehensive guid
 18. [List](#list)
 19. [Tuples](#tuples)
 20. [Break and Continue](#break-and-continue)
+21. [Set and FrozenSet](#set-and-frozenset)
 
 ## What is Python
 
@@ -705,6 +706,164 @@ for i in range(1, 13):
 # outside for loop
 
 ```
+
+---
+
+# Set and FrozenSet
+
+### Set
+
+A `set` is an unordered and unindexed collection of unique elements. It's mutable, meaning you can add or remove items after creation.
+
+#### Creating a Set
+
+```python
+# set of integers
+my_set = {1, 2, 3}
+print(my_set)
+
+# set of mixed datatypes
+my_set = {1.0, "Hello", (1, 2, 3)}
+print(my_set)
+
+# set cannot have duplicates
+my_set = {1, 2, 3, 4, 3, 2}
+print(my_set)
+```
+
+#### Methods and Examples
+
+```python
+# initialize my_set
+my_set = {1, 3}
+print(my_set)  # Output: {1, 3}
+
+# add an element
+my_set.add(2)
+print(my_set)  # Output: {1, 2, 3}
+
+# add multiple elements
+my_set.update([2, 3, 4])
+print(my_set)  # Output: {1, 2, 3, 4}
+
+# add list and set
+my_set.update([4, 5], {1, 6, 8})
+print(my_set)  # Output: {1, 2, 3, 4, 5, 6, 8}
+
+# copy my_set
+my_set2 = my_set.copy()
+print(my_set2)  # Output: {1, 2, 3, 4, 5, 6, 8}
+
+# pop an element
+print(my_set2.pop())  # Output: 1
+
+# remove an element
+my_set2.remove(8)
+print(my_set2)  # Output: {2, 3, 4, 5, 6}
+
+# difference()
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+
+# set1 - set2
+print(set1.difference(set2))  # Output: {1, 2, 3}
+
+# intersection()
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+
+# set1 intersection set2
+print(set1.intersection(set2))  # Output: {4, 5}
+
+# union()
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+
+# union of two sets
+set3 = set1.union(set2)
+print(set3)  # Output: {1, 2, 3, 4, 5, 6, 7, 8}
+```
+
+### FrozenSet
+
+A `frozenset` is an immutable version of a `set`. It's hashable, can be used as a dictionary key, and can't be changed after creation. It's often used in situations where immutability is required.
+
+#### Creating a FrozenSet
+
+```python
+# Create a set
+numbers = {1, 2, 3, 4, 5, 6}
+print(numbers)
+
+# Create a FrozenSet from a list
+vowels = ["a", "e", "i", "o", "u"]
+fSet = frozenset(vowels)
+print(fSet)
+
+# Create a FrozenSet from a tuple
+vowels = ("a", "e", "i", "o", "u")
+print(vowels)
+
+# Create a FrozenSet from a dictionary
+person = {"name": "John", "age": 23, "sex": "male"}
+fSet = frozenset(person)
+print(fSet)
+```
+
+#### FrozenSet Methods and Examples
+
+```python
+# copying a frozen set
+vowels = ("a", "e", "i", "o", "u")
+fSet = frozenset(vowels)
+fSet1 = fSet.copy()
+print(fSet1)
+
+# difference of two frozen sets
+set1 = frozenset([1, 2, 3, 4])
+set2 = frozenset([3, 4, 5, 6])
+set3 = set1.difference(set2)
+print(set3)
+
+# intersection of two frozen sets
+set1 = frozenset([1, 2, 3, 4])
+set2 = frozenset([3, 4, 5, 6])
+set3 = set1.intersection(set2)
+print(set3)
+
+# checking if two frozen sets are disjoint
+set1 = frozenset([1, 2, 3, 4])
+set2 = frozenset([5, 6, 7, 8])
+print(set1.isdisjoint(set2))
+
+# check if one frozen set is a subset of another
+set1 = frozenset([1, 2, 3, 4])
+set2 = frozenset([1, 2, 3, 4, 5])
+set3 = frozenset([1, 2, 3])
+print(set2.issubset(set1))
+print(set3.issubset(set1))
+
+# check if one frozen set is a superset of another
+set1 = frozenset([1, 2, 3, 4])
+set2 = frozenset([1, 2, 3, 4, 5])
+set3 = frozenset([1, 2, 3])
+print(set1.issuperset(set2))
+print(set1.issuperset(set3))
+
+# symmetric difference of two frozen sets
+set1 = frozenset([1, 2, 3, 4])
+set2 = frozenset([3, 4, 5, 6])
+set3 = set1.symmetric_difference(set2)
+print(set3)
+
+# union of two frozen sets
+set1 = frozenset([1, 2, 3, 4])
+set2 = frozenset([3, 4, 5, 6])
+set3 = set1.union(set2)
+print(set3)
+```
+
+---
 
 ## License
 
