@@ -27,7 +27,7 @@ Welcome to the Python Repository! This repository serves as a comprehensive guid
     - Identity Operators
     - Membership Operators
 11. [Type Casting](#type-casting)
-    - Implicit Type Casting (Coercion)
+    - Implicit Type Casting (Conversion)
     - Explicit Type Casting (Conversion)
 12. [Taking Input at Runtime](#taking-input-at-runtime)
 13. [Strings and Its Methods](#strings-and-its-methods)
