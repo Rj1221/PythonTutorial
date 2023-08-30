@@ -49,6 +49,7 @@ Welcome to the Python Repository! This repository serves as a comprehensive guid
     - Default Arguments
     - Gather Positional Arguments \*
     - Gather Keyword Arguments \*\*
+    - Docstrings
 
 ## What is Python
 
@@ -1283,6 +1284,62 @@ display_info(name="Alice", age="30", city="New York")
 # name: Alice
 # age: 30
 # city: New York
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Docstrings
+
+**Definition:** Docstrings (Document Strings) are string literals used to document a Python module, class, function, or method. They serve as a form of documentation and are accessible using the built-in `help()` function or within integrated development environments (IDEs) like Jupyter Notebook or code editors.
+
+**Clarification:** Docstrings provide explanations about the purpose, usage, parameters, and return values of functions and methods. They help developers understand how to use and work with the code they encounter, making it easier to collaborate and maintain codebases.
+
+**Syntax:**
+
+```python
+def function_name(parameter1, parameter2):
+    """
+    Brief description of the function or method.
+
+    More detailed explanation of what the function does and how to use it.
+
+    :param parameter1: Description of parameter1.
+    :param parameter2: Description of parameter2.
+    :return: Description of what the function returns.
+    """
+    # Function body
+    # ...
+```
+
+**Example:**
+
+```python
+def calculate_total(price, quantity, tax_rate=0.1):
+    """
+    Calculate the total cost of items including tax.
+
+    This function takes the price, quantity, and an optional tax rate to calculate
+    the total cost of items including tax.
+
+    :param price: The price of each item.
+    :param quantity: The quantity of items.
+    :param tax_rate: The tax rate (default is 0.1).
+    :return: The total cost including tax.
+    """
+    subtotal = price * quantity
+    tax_amount = subtotal * tax_rate
+    total = subtotal + tax_amount
+    return total
+```
+
+To access the docstring of a function or method, you can use the `help()` function or by using the `.__doc__` attribute.
+
+```python
+print(help(calculate_total))
+# Output: Displays the docstring of the calculate_total function.
+
+print(calculate_total.__doc__)
+# Output: Prints the docstring of the calculate_total function means it will print whatever we have written in the docstring.
 ```
 
 ---
