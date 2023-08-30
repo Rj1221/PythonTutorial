@@ -41,7 +41,8 @@ Welcome to the Python Repository! This repository serves as a comprehensive guid
 19. [Tuples](#tuples)
 20. [Break and Continue](#break-and-continue)
 21. [Set and FrozenSet](#set-and-frozenset)
-22. [Functions and Exception Handling](#functions-and-exception-handling)
+22. [Dictionary](#dictionary)
+23. [Functions and Exception Handling](#functions-and-exception-handling)
     - Functions
     - Positional Arguments
     - Keyword Arguments
@@ -53,6 +54,8 @@ Welcome to the Python Repository! This repository serves as a comprehensive guid
 
 Python is a high-level, interpreted, and general-purpose programming language known for its simplicity and readability. It is widely used in various domains, including web development, data analysis, artificial intelligence, automation, and more.
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Features of Python
 
 - Easy-to-learn syntax
@@ -61,6 +64,9 @@ Python is a high-level, interpreted, and general-purpose programming language kn
 - Dynamic typing
 - Object-oriented programming support
 - Cross-platform compatibility
+- Open-source community development
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## What is Python Used For
 
@@ -74,9 +80,13 @@ Python is used for a wide range of applications, including:
 - Network programming
 - And much more!
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Modules in Python
 
 Modules in Python are files containing Python code that can be reused in other programs. They help in organizing code and promoting code reusability.
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Types of Modules
 
@@ -97,6 +107,8 @@ External modules are created by the Python community and are not part of the sta
 - `beautifulsoup4`
 - `matplotlib`
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Our First Program
 
 Let's start with the classic "Hello, World!" program, a simple program that displays the text "Hello, World!" on the screen.
@@ -104,6 +116,8 @@ Let's start with the classic "Hello, World!" program, a simple program that disp
 ```python
 print("Hello, World!")
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Comments, Escape Sequences, and Print Statement
 
@@ -121,6 +135,8 @@ print("Hello, Python!")
 print("Line 1\nLine 2")
 ```
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Variables
 
 Variables in Python are used to store data of different data types, such as numbers, strings, or objects.
@@ -135,6 +151,8 @@ name = "John Doe"
 # Floating-point variable
 price = 10.99
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Data Types
 
@@ -167,6 +185,8 @@ frozen_fruits = frozenset(fruits)
 # Mapping type
 person = {"name": "Bob", "age": 30}
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Operators in Python
 
@@ -245,6 +265,8 @@ print("apple" in fruits)    # True (apple is in the list)
 print("grape" not in fruits)  # True (grape is not in the list)
 ```
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Type Casting
 
 Type casting allows converting one data type to another.
@@ -271,6 +293,8 @@ sum = int(x) + y  # Convert 'x' to int before addition
 print(sum)       # Output: 15
 ```
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Taking Input at Runtime
 
 You can take user input at runtime using the `input()` function.
@@ -279,6 +303,8 @@ You can take user input at runtime using the `input()` function.
 name = input("Enter your name: ")
 print("Hello, " + name + "!")
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Strings and Its Methods
 
@@ -312,6 +338,8 @@ print(text.endswith("Python!"))  # Output: True
 print(text.split(","))  # Output: ['Hello', ' Python!']
 ```
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Conditional Statements
 
 Conditional statements allow executing different code blocks based on certain conditions.
@@ -326,6 +354,8 @@ elif x == 0:
 else:
     print("Negative")
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Match Case Statements
 
@@ -344,6 +374,8 @@ match fruit:
     case _:
         print("Unknown fruit.")
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Looping Statements
 
@@ -380,6 +412,8 @@ else:
     print("Count is greater than 5")
 ```
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Range and Its Parameters
 
 `range()` is a built-in function used to generate sequences of numbers.
@@ -398,16 +432,20 @@ for num in range(1, 11, 2):
     print(num)
 ```
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## List
 
 List are Mutable and Ordered Collection of items and can be changed or modified after its creation.
 List allows duplicate members.
 List is a collection which is ordered and changeable. Allows duplicate members.
 List is a collection which is ordered and changeable. Allows duplicate members.
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Working with Lists in Python
 
 Lists are mutable data structures in Python, meaning their elements can be changed after creation. Here's how you can perform various operations with lists:
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Assigning Lists
 
@@ -417,6 +455,8 @@ l_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print(l_list)                 # Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print(type(l_list))           # Output: <class 'list'>
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Accessing List Elements
 
@@ -429,6 +469,8 @@ print(l_list[2:5])            # Output: [3, 4, 5] (Range of Indexes)
 print(l_list[:5])             # Output: [1, 2, 3, 4, 5] (Range of Indexes)
 ```
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Loop Through a List
 
 ```python
@@ -438,6 +480,8 @@ for x in l_list:
 print()                       # To move to the next line
 ```
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Modify List Items
 
 ```python
@@ -445,6 +489,8 @@ print()                       # To move to the next line
 l_list[0] = 11
 print("Modified list:", l_list)   # Output: Modified list: [11, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Check if Item Exists in List
 
@@ -455,6 +501,8 @@ if 1 in l_list:
 else:
     print("No, '1' is not in the list")
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## List Length
 
@@ -481,6 +529,8 @@ print("List After Insert:",l_list) #Output :List after Insert: [0, 1, 2, 3, 4, 5
 
 ```
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Remove Items from a List
 
 ```python
@@ -498,6 +548,8 @@ l_list.clear()
 print("List after clear:", l_list)    # Output: List after clear: []
 ```
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Join Two Lists
 
 ```python
@@ -506,6 +558,8 @@ l_list2 = [4, 5, 6]
 l_list3 = l_list1 + l_list2
 print("Join two lists:", l_list3)    # Output: Join two lists: [1, 2, 3, 4, 5, 6]
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## List Methods
 
@@ -517,6 +571,8 @@ print("Count of 1 in list:", l_list4.count(1))   # Output: Count of 1 in list: 3
 # index()	Searches the list for a specified value and returns the index of where it was found
 print("Index of 2 in list:", l_list4.index(2))   # Output: Index of 2 in list: 2
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Built-in Functions and Operators
 
@@ -541,6 +597,7 @@ print("Sum of all items in list:", sum(l_list3))    # Output: Sum of all items i
 ```
 
 These are some of the basic operations and methods you can use to work with lists in Python.
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Tuples
 
@@ -610,6 +667,8 @@ l_tuple3 = l_tuple1 + l_tuple2
 print("Join two tuples:", l_tuple3)     # Output: Join two tuples: (1, 2, 3, 4, 5, 6)
 ```
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## Tuple Methods
 
 ```python
@@ -619,6 +678,8 @@ print("Count of 1 in tuple:", l_tuple3.count(1))   # Output: Count of 1 in tuple
 # index()	Searches the tuple for a specified value and returns the position of where it was found
 print("Index of 1 in tuple:", l_tuple3.index(1))   # Output: Index of 1 in tuple: 0
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Built-in Functions and Operators
 
@@ -642,6 +703,8 @@ print("Min item in tuple:", min(l_tuple3))           # Output: Min item in tuple
 print("Sum of all items in tuple:", sum(l_tuple3))    # Output: Sum of all items in tuple: 21
 
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Break and Continue
 
@@ -684,6 +747,8 @@ for i in range(1,20):
 
 ```
 
+**[⬆ Back to Top](#table-of-contents)**
+
 # Continue
 
 The continue statement is used to skip the current iteration of the loop and continue with the next iteration.
@@ -714,7 +779,7 @@ for i in range(1, 13):
 
 ```
 
----
+## **[⬆ Back to Top](#table-of-contents)**
 
 # Set and FrozenSet
 
@@ -791,6 +856,8 @@ set3 = set1.union(set2)
 print(set3)  # Output: {1, 2, 3, 4, 5, 6, 7, 8}
 ```
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ### FrozenSet
 
 A `frozenset` is an immutable version of a `set`. It's hashable, can be used as a dictionary key, and can't be changed after creation. It's often used in situations where immutability is required.
@@ -816,6 +883,8 @@ person = {"name": "John", "age": 23, "sex": "male"}
 fSet = frozenset(person)
 print(fSet)
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
 
 #### FrozenSet Methods and Examples
 
@@ -870,7 +939,180 @@ set3 = set1.union(set2)
 print(set3)
 ```
 
----
+## **[⬆ Back to Top](#table-of-contents)**
+
+## Dictionary
+
+A dictionary in Python is a collection of key-value pairs. Each key in a dictionary must be unique, and it is associated with a corresponding value. Dictionaries are defined using curly braces `{}` and the key-value pairs are separated by colons. Here are some dictionary syntax examples:
+
+1. Basic Dictionary:
+
+```python
+my_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+```
+
+2. Dictionary with Different Data Types:
+
+```python
+person = {'name': 'Alice', 'age': 30, 'is_student': False}
+```
+
+3. Nested Dictionary (Dictionary of Dictionaries):
+
+```python
+students = {
+    'student1': {'name': 'Bob', 'age': 25},
+    'student2': {'name': 'Charlie', 'age': 28}
+}
+```
+
+4. Accessing Values by Key:
+
+```python
+person = {'name': 'Alice', 'age': 30}
+name = person['name']
+age = person['age']
+```
+
+5. Adding a New Key-Value Pair:
+
+```python
+person = {'name': 'Alice', 'age': 30}
+person['city'] = 'New York'
+```
+
+6. Modifying a Value:
+
+```python
+person = {'name': 'Alice', 'age': 30}
+person['age'] = 31
+```
+
+7. Dictionary with Various Data Types as Values:
+
+```python
+data = {'name': 'John', 'age': 25, 'grades': [90, 85, 92]}
+```
+
+8. Using Dictionary Methods (e.g., `keys()`, `values()`, `items()`):
+
+```python
+person = {'name': 'Alice', 'age': 30}
+keys = person.keys()
+values = person.values()
+items = person.items()
+```
+
+9. Removing a Key-Value Pair:
+
+```python
+person = {'name': 'Alice', 'age': 30}
+removed_value = person.pop('age')
+```
+
+10. Dictionary Comprehension:
+
+```python
+numbers = {'one': 1, 'two': 2, 'three': 3}
+squared_numbers = {key: value ** 2 for key, value in numbers.items()}
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+# Methods and Examples
+
+1. `clear()` - Removes all the elements from the dictionary:
+
+```python
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+my_dict.clear()
+print(my_dict)  # Output: {}
+```
+
+2. `copy()` - Returns a copy of the dictionary:
+
+```python
+original_dict = {'name': 'Alice', 'age': 30}
+copied_dict = original_dict.copy()
+print(copied_dict)  # Output: {'name': 'Alice', 'age': 30}
+```
+
+3. `fromkeys()` - Returns a dictionary with the specified keys and value:
+
+```python
+keys = ['a', 'b', 'c']
+value = 0
+new_dict = dict.fromkeys(keys, value)
+print(new_dict)  # Output: {'a': 0, 'b': 0, 'c': 0}
+```
+
+4. `get()` - Returns the value of the specified key:
+
+```python
+my_dict = {'name': 'Bob', 'age': 25}
+age = my_dict.get('age')
+print(age)  # Output: 25
+```
+
+5. `items()` - Returns a list containing a tuple for each key-value pair:
+
+```python
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+items = my_dict.items()
+print(items)  # Output: dict_items([('a', 1), ('b', 2), ('c', 3)])
+```
+
+6. `keys()` - Returns a list containing the dictionary's keys:
+
+```python
+my_dict = {'name': 'Charlie', 'age': 28, 'location': 'XYZ'}
+keys = my_dict.keys()
+print(keys)  # Output: dict_keys(['name', 'age', 'location'])
+```
+
+7. `pop()` - Removes the element with the specified key:
+
+```python
+my_dict = {'x': 10, 'y': 20, 'z': 30}
+value = my_dict.pop('y')
+print(value)  # Output: 20
+print(my_dict)  # Output: {'x': 10, 'z': 30}
+```
+
+8. `popitem()` - Removes the last inserted key-value pair:
+
+```python
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+removed_item = my_dict.popitem()
+print(removed_item)  # Output: ('c', 3)
+print(my_dict)  # Output: {'a': 1, 'b': 2}
+```
+
+9. `setdefault()` - Returns the value of the specified key. If the key does not exist, inserts the key with the specified value:
+
+```python
+my_dict = {'name': 'Eve'}
+age = my_dict.setdefault('age', 22)
+print(my_dict)  # Output: {'name': 'Eve', 'age': 22}
+```
+
+10. `update()` - Updates the dictionary with the specified key-value pairs:
+
+```python
+my_dict = {'a': 1, 'b': 2}
+my_dict.update({'b': 3, 'c': 4})
+print(my_dict)  # Output: {'a': 1, 'b': 3, 'c': 4}
+```
+
+11. `values()` - Returns a list of all the values in the dictionary:
+
+```python
+my_dict = {'x': 10, 'y': 20, 'z': 30}
+values = my_dict.values()
+print(values)  # Output: dict_values([10, 20, 30])
+```
+
+## **[⬆ Back to Top](#table-of-contents)**
 
 ## Functions and Exception Handling
 
@@ -914,6 +1156,8 @@ final_total = calculate_total(item_price, item_quantity)
 print("Total:", final_total)  # Output: Total: 55.0
 ```
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ### Positional Arguments
 
 **Definition:** Positional arguments are values or variables passed to a function in a specific order. They are matched with function parameters based on their positions.
@@ -936,6 +1180,8 @@ result = add(3, 5)
 print(result)  # Output: 8
 ```
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ### Keyword Arguments
 
 **Definition:** Keyword arguments are values or variables passed to a function using parameter names as keys. This allows you to specify which argument corresponds to which parameter, regardless of their positions.
@@ -957,6 +1203,8 @@ def divide(dividend, divisor):
 result = divide(dividend=10, divisor=2)
 print(result)  # Output: 5.0
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ### Default Arguments
 
@@ -983,6 +1231,8 @@ print(result1)  # Output: 9
 print(result2)  # Output: 8
 ```
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ### Gather Positional Arguments `*`
 
 **Definition:** The asterisk (\*) is used in a function parameter to gather any remaining positional arguments into a tuple. This allows a function to accept a variable number of arguments.
@@ -1005,6 +1255,8 @@ def concatenate(separator, *strings):
 result = concatenate("-", "a", "b", "c")
 print(result)  # Output: a-b-c
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ### Gather Keyword Arguments `**`
 
@@ -1034,6 +1286,8 @@ display_info(name="Alice", age="30", city="New York")
 ```
 
 ---
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## License
 
