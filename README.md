@@ -441,11 +441,13 @@ List are Mutable and Ordered Collection of items and can be changed or modified 
 List allows duplicate members.
 List is a collection which is ordered and changeable. Allows duplicate members.
 List is a collection which is ordered and changeable. Allows duplicate members.
+
 **[⬆ Back to Top](#table-of-contents)**
 
 ## Working with Lists in Python
 
 Lists are mutable data structures in Python, meaning their elements can be changed after creation. Here's how you can perform various operations with lists:
+
 **[⬆ Back to Top](#table-of-contents)**
 
 ## Assigning Lists
