@@ -92,3 +92,19 @@ print(a)
 # all()	Returns True if all items in an iterable object are true
 # any()	Returns True if any item in an iterable object is true
 # len()	Returns the length of an object
+# Shallow Copy and Deep Copy In Least
+# Shallow Copy
+# A shallow copy means constructing a new collection object and then populating it with references to the child objects found in the original.
+list1 = [1, 2, 3, 4, 5]
+list2 = list1
+print(list1)
+print(list2)
+
+# Deep Copy
+# A deep copy makes the copying process recursive. It means first constructing a new collection object and then recursively populating it with copies of the child objects found in the original.
+import copy
+
+list10 = [1, 2, 3, 4, 5]
+list20 = copy.deepcopy(list10)
+print(list10)
+print(list20)
