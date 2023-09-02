@@ -600,6 +600,7 @@ print("Sum of all items in list:", sum(l_list3))    # Output: Sum of all items i
 ```
 
 These are some of the basic operations and methods you can use to work with lists in Python.
+
 **[⬆ Back to Top](#table-of-contents)**
 
 ## Tuples
