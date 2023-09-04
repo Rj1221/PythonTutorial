@@ -13,29 +13,29 @@ Welcome to the Python Repository! This repository serves as a comprehensive guid
 3. [What is Python Used For](#what-is-python-used-for)
 4. [Modules in Python](#modules-in-python)
 5. [Types of Modules](#types-of-modules)
-   - Built-in Modules
-   - External Modules
+   - [Built-in Modules](#built-in-modules)
+   - [External Modules](#external-modules)
 6. [Our First Program](#our-first-program)
 7. [Comments, Escape Sequences, and Print Statement](#comments-escape-sequences-and-print-statement)
 8. [Variables](#variables)
 9. [Data Types](#data-types)
 10. [Operators in Python](#operators-in-python)
-    - Arithmetic Operators
-    - Comparison Operators
-    - Logical Operators
-    - Assignment Operators
-    - Identity Operators
-    - Membership Operators
+    - [Arithmetic Operators](#arithmetic-operators)
+    - [Comparison Operators](#comparison-operators)
+    - [Logical Operators](#logical-operators)
+    - [Assignment Operators](#assignment-operators)
+    - [Identity Operators](#identity-operators)
+    - [Membership Operators](#membership-operators)
 11. [Type Casting](#type-casting)
-    - Implicit Type Casting (Conversion)
-    - Explicit Type Casting (Conversion)
+    - [Implicit Type Casting (Coercion)](#implicit-type-casting-coercion)
+    - [Explicit Type Casting (Conversion)](#explicit-type-casting-conversion)
 12. [Taking Input at Runtime](#taking-input-at-runtime)
 13. [Strings and Its Methods](#strings-and-its-methods)
 14. [Conditional Statements](#conditional-statements)
 15. [Match Case Statements](#match-case-statements)
 16. [Looping Statements](#looping-statements)
-    - For Loop
-    - While Loop
+    - [For Loop](#for-loop)
+    - [While Loop](#while-loop)
 17. [Range and Its Parameters](#range-and-its-parameters)
 18. [List](#list)
 19. [Tuples](#tuples)
@@ -43,13 +43,15 @@ Welcome to the Python Repository! This repository serves as a comprehensive guid
 21. [Set and FrozenSet](#set-and-frozenset)
 22. [Dictionary](#dictionary)
 23. [Functions and Exception Handling](#functions-and-exception-handling)
-    - Functions
-    - Positional Arguments
-    - Keyword Arguments
-    - Default Arguments
-    - Gather Positional Arguments \*
-    - Gather Keyword Arguments \*\*
-    - Docstrings
+    - [Functions](#functions)
+    - [Positional Arguments](#positional-arguments)
+    - [Keyword Arguments](#keyword-arguments)
+    - [Default Arguments](#default-arguments)
+    - [Gather Positional Arguments \*](#gather-positional-arguments)
+    - [Gather Keyword Arguments \*\*](#gather-keyword-arguments)
+    - [Docstrings](#docstrings)
+    - [Inner Functions](#inner-functions)
+    - [Anonymous Functions (Lambda Functions)](#anonymous-functions-lambda-functions)
 
 ## What is Python
 
@@ -1344,6 +1346,140 @@ print(help(calculate_total))
 print(calculate_total.__doc__)
 # Output: Prints the docstring of the calculate_total function means it will print whatever we have written in the docstring.
 ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Inner Functions
+
+**Definition:** Inner functions, also known as nested functions, are functions defined within the scope of another enclosing function. They are nested inside other functions and have access to the variables and resources of their containing function.
+
+**Clarification:** Inner functions are a way to encapsulate and organize code by keeping related functionality together. They are often used to perform specialized tasks within the context of the enclosing function, and they can access the arguments and variables of that outer function.
+
+**Syntax:**
+
+```python
+def outer_function(outer_arguments):
+    # Outer function code
+
+    def inner_function(inner_arguments):
+        # Inner function code
+        # Access outer_arguments and other variables from the outer function
+
+    # More outer function code
+```
+
+**Example:**
+
+```python
+def calculate_tax(price, quantity, tax_rate):
+    def apply_tax(subtotal):
+        return subtotal * tax_rate
+
+    subtotal = price * quantity
+    tax_amount = apply_tax(subtotal)
+    total_cost = subtotal + tax_amount
+    return total_cost
+
+price = 25
+quantity = 2
+tax_rate = 0.1
+total = calculate_tax(price, quantity, tax_rate)
+print("Total cost with tax:", total)
+```
+
+Inner functions are useful for:
+
+1. **Encapsulation:** Keeping related functionality together and avoiding polluting the global namespace.
+2. **Information Hiding:** Concealing details of a specific calculation or operation within the outer function.
+3. **Code Reusability:** Inner functions can be reused within the same outer function or even in other functions defined within the same scope.
+
+```python
+# Example : How to define Inner Functions in Python?
+def outerFunction(text):
+    def innerFunction():
+        print(text)
+
+    innerFunction()
+
+
+outerFunction("Hey!")
+
+# Output: Hey!
+```
+
+```python
+
+# Example : How to access Inner Function?
+def outerFunction(text):
+    def innerFunction():
+        print(text)
+
+    return innerFunction
+
+
+myFunction = outerFunction("Hey!")
+myFunction()
+
+# Output: Hey!
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Anonymous Functions (Lambda Functions)
+
+**Definition:** Anonymous functions, also known as lambda functions, are small, unnamed functions defined using the `lambda` keyword. They are typically used for simple operations and are often used in functional programming constructs like `map`, `filter`, and `reduce`.
+
+**Clarification:** Lambda functions are used when you need a small function for a short period, and you don't want to define a full-fledged named function using the `def` keyword. They are concise and can take multiple arguments but can only contain a single expression.
+
+**Syntax:**
+
+```python
+lambda arguments: expression
+```
+
+**Example 1 - Basic Usage:**
+
+```python
+# Lambda function to add two numbers
+add = lambda x, y: x + y
+
+result = add(5, 3)
+print(result)  # Output: 8
+```
+
+**Example 2 - Using Lambda with `map`:**
+
+```python
+# Using lambda with map to square a list of numbers
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x ** 2, numbers))
+
+print(squared)  # Output: [1, 4, 9, 16, 25]
+```
+
+**Example 3 - Using Lambda with `filter`:**
+
+```python
+# Using lambda with filter to get even numbers from a list
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+evens = list(filter(lambda x: x % 2 == 0, numbers))
+
+print(evens)  # Output: [2, 4, 6, 8]
+```
+
+**Example 4 - Using Lambda with `sorted`:**
+
+```python
+# Using lambda with sorted to sort a list of tuples based on the second element
+data = [(1, 5), (3, 2), (2, 8)]
+sorted_data = sorted(data, key=lambda x: x[1])
+
+print(sorted_data)  # Output: [(3, 2), (1, 5), (2, 8)]
+```
+
+Lambda functions are especially handy when you need a simple function for a short-lived task. However, for more complex or reusable functions, it's recommended to use the `def` keyword to define named functions for better readability and maintainability of your code.
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ---
 
