@@ -52,6 +52,7 @@ Welcome to the Python Repository! This repository serves as a comprehensive guid
     - [Docstrings](#docstrings)
     - [Inner Functions](#inner-functions)
     - [Anonymous Functions (Lambda Functions)](#anonymous-functions-lambda-functions)
+    - [Generators](#generators)
 
 ## What is Python
 
@@ -1480,6 +1481,98 @@ print(sorted_data)  # Output: [(3, 2), (1, 5), (2, 8)]
 Lambda functions are especially handy when you need a simple function for a short-lived task. However, for more complex or reusable functions, it's recommended to use the `def` keyword to define named functions for better readability and maintainability of your code.
 
 **[⬆ Back to Top](#table-of-contents)**
+
+### Generators
+
+**Definition:** Generators in Python are a type of iterable, much like lists or tuples. However, unlike lists that store all their values in memory at once, generators create values on the fly, one at a time, using a special type of function called a generator function. This allows generators to be memory-efficient and particularly useful when dealing with large datasets.
+
+**Clarification:** Generator functions are defined using the `yield` keyword instead of `return`. When a generator function is called, it doesn't execute immediately; instead, it returns a generator object. The values are produced and retrieved from the generator using iteration constructs like loops. This on-demand generation of values makes generators efficient for processing large data streams.
+
+**Syntax:**
+
+```python
+def generator_function(parameters):
+    # Generator function code
+    yield value  # Produces a value in the generator
+```
+
+**Example 1 - Simple Generator Function:**
+
+```python
+def count_up_to(n):
+    i = 1
+    while i <= n:
+        yield i
+        i += 1
+
+# Using the generator to print numbers up to 5
+counter = count_up_to(5)
+for num in counter:
+    print(num)
+# Output: 1 2 3 4 5
+```
+
+**Example 2 - Generator Expression:**
+
+```python
+# Using a generator expression to generate a sequence of squared numbers
+squared = (x ** 2 for x in range(1, 6))
+for num in squared:
+    print(num)
+# Output: 1 4 9 16 25
+```
+
+**Example 3 - Infinite Generator:**
+
+```python
+def infinite_counter():
+    i = 1
+    while True:
+        yield i
+        i += 1
+
+# Using an infinite generator to generate numbers on-demand
+counter = infinite_counter()
+for _ in range(5):
+    print(next(counter))
+# Output: 1 2 3 4 5
+```
+
+**Example 4 - Generate a Random Number:**
+
+```python
+import random
+
+
+def lottery():
+    # returns 6 numbers between 1 and 40
+    for i in range(6):
+        yield random.randint(1, 40)
+
+    # returns a 7th number between 1 and 15
+    yield random.randint(1, 15)
+
+
+for random_number in lottery():
+    print("And the next number is... %d!" % (random_number))
+
+```
+
+**Example 5 - Generator For Even Numbers:**
+
+```python
+def even_numbers(n):
+    for i in range(1, n):
+        if i % 2 == 0:
+            yield i
+
+
+for number in even_numbers(11):
+    print("Even number: ", number)
+
+```
+
+Generators are particularly beneficial when dealing with large datasets, as they allow you to work with data one piece at a time, without the need to load everything into memory. They're commonly used in scenarios like reading large files, streaming data processing, and creating efficient custom iterators.
 
 ---
 
