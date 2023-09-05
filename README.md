@@ -53,6 +53,9 @@ Welcome to the Python Repository! This repository serves as a comprehensive guid
     - [Inner Functions](#inner-functions)
     - [Anonymous Functions (Lambda Functions)](#anonymous-functions-lambda-functions)
     - [Generators](#generators)
+    - [Decorators](#decorators)
+    - [Namespace and Scope](#namespace-and-scope)
+    - [Uses of \_ and \_\_ in Names](#uses-of-_-and-__-in-names)
 
 ## What is Python
 
@@ -1573,6 +1576,222 @@ for number in even_numbers(11):
 ```
 
 Generators are particularly beneficial when dealing with large datasets, as they allow you to work with data one piece at a time, without the need to load everything into memory. They're commonly used in scenarios like reading large files, streaming data processing, and creating efficient custom iterators.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Decorators
+
+**Definition:** In Python, decorators are a powerful and flexible way to modify or enhance the behavior of functions or methods without changing their code. Decorators are functions themselves and are typically used to add additional functionality or modify the behavior of other functions or methods. They are often used for tasks like logging, authentication, and measuring execution time.
+
+**Clarification:** Decorators are applied to functions or methods using the "@" symbol followed by the decorator's name. When a decorated function is called, it is wrapped by the decorator, allowing you to execute code before and/or after the original function's execution.
+
+**Syntax:**
+
+```python
+def decorator_function(original_function):
+    def wrapper(*args, **kwargs):
+        # Code to execute before the original function
+        result = original_function(*args, **kwargs)
+        # Code to execute after the original function
+        return result
+    return wrapper
+
+@decorator_function
+def function_to_decorate(*args, **kwargs):
+    # Original function code
+```
+
+**Example 1 - Basic Decorator:**
+
+```python
+def greeting_decorator(func):
+    def wrapper(*args, **kwargs):
+        print("Hello, this is a decorated function!")
+        result = func(*args, **kwargs)
+        print("Goodbye from the decorator!")
+        return result
+    return wrapper
+
+@greeting_decorator
+def say_hello(name):
+    print(f"Hello, {name}!")
+
+say_hello("Alice")
+# Output:
+# Hello, this is a decorated function!
+# Hello, Alice!
+# Goodbye from the decorator!
+```
+
+**Example 2 - Decorator with Arguments:**
+
+```python
+def repeat_decorator(num_repeats):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            for _ in range(num_repeats):
+                func(*args, **kwargs)
+        return wrapper
+    return decorator
+
+@repeat_decorator(3)
+def say_hello(name):
+    print(f"Hello, {name}!")
+
+say_hello("Bob")
+# Output:
+# Hello, Bob!
+# Hello, Bob!
+# Hello, Bob!
+```
+
+**Example 3 - Class-based Decorator:**
+
+```python
+class TimingDecorator:
+    def __init__(self, func):
+        self.func = func
+
+    def __call__(self, *args, **kwargs):
+        import time
+        start_time = time.time()
+        result = self.func(*args, **kwargs)
+        end_time = time.time()
+        print(f"{self.func.__name__} took {end_time - start_time:.2f} seconds to run.")
+        return result
+
+@TimingDecorator
+def slow_function():
+    import time
+    time.sleep(2)
+
+slow_function()
+# Output: slow_function took 2.00 seconds to run.
+```
+
+Decorators are a powerful tool in Python for enhancing the functionality of functions or methods without modifying their core code. They can be used for a wide range of purposes, making your code more modular and maintainable.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Namespace and Scope
+
+**Definition:** In Python, a namespace is a container that holds a collection of identifiers (such as variable names, function names, class names) and maps them to their corresponding objects (like values, functions, or classes). Each namespace has a specific scope, which defines the region of code where a particular namespace is accessible.
+
+**Clarification:**
+
+- **Namespace:** A namespace is like a dictionary that associates names (identifiers) with objects. Namespaces provide a way to organize and avoid naming conflicts in your code.
+
+- **Scope:** Scope refers to the region of code where a particular namespace is accessible. Python has several levels of scope, including global scope (accessible throughout the entire program) and local scope (restricted to a specific function or block of code).
+
+**Examples:**
+
+**1. Global Namespace and Scope:**
+
+```python
+global_var = 10  # This is in the global namespace
+
+def my_function():
+    local_var = 5  # This is in the local namespace of my_function
+    print(global_var)  # Accessing a global variable from within the function
+
+my_function()
+print(local_var)  # This will result in an error because local_var is not in the global scope
+```
+
+In this example, `global_var` is in the global namespace, so it's accessible from both the global scope and within `my_function`. However, `local_var` is in the local namespace of `my_function`, making it inaccessible from the global scope.
+
+**2. Built-in Namespace:**
+Python also has a built-in namespace containing functions and objects like `print()`, `len()`, `str()`, etc. These can be used without importing them explicitly.
+
+```python
+print(len("Hello"))  # Here, len() is from the built-in namespace
+```
+
+**3. Namespace Conflicts:**
+
+```python
+x = 5
+
+def my_function(x):
+    print("Local x:", x)  # This x is from the local scope
+    print("Global x:", globals()['x'])  # Accessing the global x explicitly
+
+my_function(10)
+```
+
+In this example, there's a local variable `x` within `my_function`, and there's a global variable `x`. To access the global `x` within the function, we use `globals()` to access the global namespace.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Uses of \_ and \_\_ in Names
+
+In Python, the use of underscores `_` and `__` in variable and attribute names follows certain conventions and has specific meanings. Here's an explanation of their common uses:
+
+### Underscore `_`
+
+1. **Single Underscore Prefix `_var`:**
+
+   - By convention, a single underscore prefix (`_var`) is used to indicate that a variable or attribute is intended to be private. It's a signal to other developers that they should not access this variable directly from outside the class or module.
+   - It doesn't make the variable truly private; it's more of a naming convention to respect encapsulation.
+   - Example:
+
+     ```python
+     class MyClass:
+         def __init__(self):
+             self._private_var = 42
+
+     obj = MyClass()
+     print(obj._private_var)  # Accessing a "private" variable (not recommended)
+     ```
+
+2. **Single Underscore as a Placeholder `_`:**
+   - The single underscore `_` is often used as a placeholder variable when you don't intend to use the value. It's a convention to indicate that the value itself is not important.
+   - Example:
+     ```python
+     for _ in range(5):
+         # Perform some action 5 times, but we don't need the loop variable
+         print("Hello")
+     ```
+
+### Double Underscore `__`
+
+1. **Name Mangling with Double Underscores `__var`:**
+
+   - When a variable or attribute is prefixed with double underscores (`__var`), Python performs name mangling to make it less accessible outside the class.
+   - It effectively changes the name of the variable to include the class name, which makes it more challenging to accidentally override attributes from parent classes.
+   - Example:
+
+     ```python
+     class MyClass:
+         def __init__(self):
+             self.__private_var = 42
+
+     obj = MyClass()
+     # Accessing a "name-mangled" variable requires using the mangled name
+     print(obj._MyClass__private_var)
+     ```
+
+2. **Double Underscore for Special Methods `__method__`:**
+
+   - In Python, certain methods like `__init__`, `__str__`, and `__add__` have special meanings. By convention, they are surrounded by double underscores.
+   - Defining these special methods in your class allows you to customize the behavior of objects when used in specific contexts (e.g., object initialization, string representation, or addition).
+   - Example:
+
+     ```python
+     class MyClass:
+         def __init__(self, value):
+             self.value = value
+
+         def __str__(self):
+             return f"MyClass instance with value: {self.value}"
+
+     obj = MyClass(42)
+     print(obj)  # This calls the __str__ method
+     ```
+
+Both single and double underscores are conventions in Python, and their use does not enforce access control. It's important to respect these conventions to improve code readability and maintainability and to avoid accidental variable clashes, especially in larger codebases and collaborations.
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ---
 
