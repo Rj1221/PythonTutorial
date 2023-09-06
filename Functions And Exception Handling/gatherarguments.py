@@ -71,3 +71,26 @@ kwargs(name="Bruce", age=24, country="NZ")
 # name = Bruce
 # age = 24
 # country = NZ
+
+
+def evenOdd(*number):
+    """
+    The function `evenOdd` takes in a variable number of arguments, separates them into even and odd
+    numbers, and returns two lists containing the even and odd numbers respectively.
+    :return: The function `evenOdd` returns two lists: `even_list` and `odd_list`.
+    """
+    even_list = []
+    odd_list = []
+    for i in number:
+        if i % 2 == 0:
+            even_list.append(i)
+        else:
+            odd_list.append(i)
+    return even_list, odd_list
+
+
+even, odd = evenOdd(5, 4, 1, 3, 9, 6, 7, 12, 18, 22, 34, 54, 98)
+sorted_even = sorted(even)
+sorted_odd = sorted(odd)
+print(sorted_even)
+print(sorted_odd)
