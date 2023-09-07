@@ -52,6 +52,7 @@ Welcome to the Python Repository! This repository serves as a comprehensive guid
     - [Docstrings](#docstrings)
     - [Inner Functions](#inner-functions)
     - [Anonymous Functions (Lambda Functions)](#anonymous-functions-lambda-functions)
+    - [Recursion](#recursion)
     - [Generators](#generators)
     - [Decorators](#decorators)
     - [Namespace and Scope](#namespace-and-scope)
@@ -1484,6 +1485,66 @@ print(sorted_data)  # Output: [(3, 2), (1, 5), (2, 8)]
 ```
 
 Lambda functions are especially handy when you need a simple function for a short-lived task. However, for more complex or reusable functions, it's recommended to use the `def` keyword to define named functions for better readability and maintainability of your code.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Recursion
+
+**Definition:** Recursion is a programming concept where a function calls itself to solve a problem. In the context of programming, it's a technique where a function performs a task in part and delegates the rest of the task to itself. Recursion is often used to solve problems that can be divided into smaller, similar subproblems.
+
+**Principles of Recursion:**
+
+1. **Base Case:** Every recursive function should have a base case, which defines when the recursion should stop. When the base case is met, the function returns a value or performs a specific action.
+
+2. **Recursive Case:** In the recursive case, the function divides the problem into smaller, similar subproblems. It calls itself with modified inputs, moving closer to the base case.
+
+3. **Termination:** Recursion should lead to the termination of the function. In other words, each recursive call should make progress toward the base case.
+
+**Example 1 - Factorial Calculation:**
+
+```python
+def factorial(n):
+    if n == 0:  # Base case
+        return 1
+    else:
+        return n * factorial(n - 1)  # Recursive case
+
+result = factorial(5)
+print(result)  # Output: 120 (5! = 5 * 4 * 3 * 2 * 1)
+```
+
+**Example 2 - Fibonacci Sequence:**
+
+```python
+def fibonacci(n):
+    if n <= 0:  # Base case
+        return 0
+    elif n == 1:  # Base case
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)  # Recursive case
+
+result = fibonacci(7)
+print(result)  # Output: 13 (Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13)
+```
+
+**Example 3 - Directory Tree Traversal:**
+
+```python
+import os
+
+def list_files(path):
+    if os.path.isfile(path):
+        print("File:", path)
+    elif os.path.isdir(path):
+        print("Directory:", path)
+        for item in os.listdir(path):
+            list_files(os.path.join(path, item))  # Recursive case
+
+list_files("/path/to/your/directory")
+```
+
+Recursion is a powerful and elegant technique, but it should be used judiciously, as excessive recursion can lead to stack overflow errors. When used appropriately, recursion simplifies problem-solving by breaking complex tasks into smaller, more manageable parts.
 
 **[⬆ Back to Top](#table-of-contents)**
 
