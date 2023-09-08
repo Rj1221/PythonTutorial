@@ -1989,7 +1989,7 @@ else:
 
 In this example, we define the `CustomException` class and use it to raise a custom exception when dividing by zero. When the exception is caught in the `except` block, you can access the custom error message associated with it.
 
-**[⬆ Back to Top](#table-of-content)**
+**[⬆ Back to Top](#table-of-contents)**
 
 ### Map
 
@@ -2062,7 +2062,7 @@ Output:
 [11, 22, 33]
 ```
 
-**[⬆ Back to Top](#table-of-content)**
+**[⬆ Back to Top](#table-of-contents)**
 
 ### Filter
 
@@ -2131,7 +2131,7 @@ Output:
 [2, 4, 6, 8, 10]
 ```
 
-**[⬆ Back to Top](#table-of-content)**
+**[⬆ Back to Top](#table-of-contents)**
 
 ### Reduce
 
@@ -2204,7 +2204,7 @@ Output:
 78
 ```
 
-**[⬆ Back to Top](#table-of-content)**
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Modules and Packages
 
